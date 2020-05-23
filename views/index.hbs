@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<form action="/" method="post">
+    <input type="text" name="full_name" id="full_name" placeholder="Enter fullname">
+    <input type="text" name="phone_number" id="phone_number" placeholder="Phone number">
+    <button type="submit">Save</button>
+</form>
+
+
+<ul>
+    {{#each users}}
+    <li>{{this.full_name}} </li>
+    <li>{{this.phone_number}}</li>
+    <a href="/delete/{{ this._id }}">delete</a> 
+    <br>
+    <a href="/update/{{ this._id }}">edit</a>   
+    <hr>
+    {{/each}}
+</ul>
